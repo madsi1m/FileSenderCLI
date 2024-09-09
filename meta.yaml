@@ -9,6 +9,7 @@ requirements:
   host:
     - pip
     - python
+    - requests
     - urllib3
     - cryptography
   run:
@@ -22,7 +23,7 @@ build:
   script:
     - mkdir -p $PREFIX/bin
     - cp filesender.py $PREFIX/bin/filesender.py
-    - chmod -R 777 $PREFIX/bin/filesender.py
+    - chmod 777 $PREFIX/bin/filesender.py
 
 about:
   home: https://www.aarnet.edu.au/filesender
