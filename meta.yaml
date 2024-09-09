@@ -1,0 +1,32 @@
+{% set name = "FileSenderCLI" %}
+{% set version = "3.0" %}
+
+package:
+  name: "{{ name|lower }}"
+  version: "{{ version }}"
+
+requirements:
+  host:
+    - pip
+    - python
+    - urllib3
+    - cryptography
+  run:
+    - python
+
+source:
+  path: ./src
+
+build:
+  number: 0
+  script:
+    - mkdir -p $PREFIX/bin
+    - cp filesender.py $PREFIX/bin/filesender.py
+    - chmod -R 777 $PREFIX/bin/filesender.py
+
+about:
+  home: https://www.aarnet.edu.au/filesender
+  license: BSD
+  license_family: BSD
+  summary: CLI tool for FileSender
+
