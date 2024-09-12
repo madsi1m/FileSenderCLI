@@ -12,16 +12,29 @@ build:
   noarch: python
   number: 0
   script:
-    - "{{ PYTHON }} -m pip install . -vv"
+    - echo "START PIP -----------------------------------"
+    - {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
+    - echo "END PIP -------------------------------------"
 
 requirements:
   host:
     - python
     - pip
-    - setuptools
+    - setuptools >58.2.0
     - wheel
   run:
     - python
+    - requests
+    - urllib3
+    - cryptography
+
+test:
+  imports:
+    - filesender
+  commands:
+    - pip check
+  requires:
+    - pip
 
 about:
   home: https://www.aarnet.edu.au/filesender
