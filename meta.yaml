@@ -9,12 +9,10 @@ source:
   path: ./src
 
 build:
-  noarch: python
   number: 0
+  noarch: python
   script:
-    - echo "START PIP -----------------------------------"
-    - {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
-    - echo "END PIP -------------------------------------"
+    - PYTHONDONTWRITEBYTECODE="" {{ PYTHON }} -m pip install . -vvv
 
 requirements:
   host:
