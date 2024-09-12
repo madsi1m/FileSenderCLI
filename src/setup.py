@@ -17,7 +17,7 @@ setup(
     packages=find_packages(),
     entry_points={
         'console_scripts': ['filesender = filesender.filesender:cmd']},
-    url='https://github.com/mthang/filesender',
+    url='https://github.com/madsi1m/FileSenderCLI',
     license='BSD 3-Clause License',
     description=(
         'Send data to remote site'),
@@ -26,6 +26,7 @@ setup(
                       'urllib3',
                       'cryptography'],
     python_requires='>=3.6',
+    include_package_data=True,
     classifiers=[
         "Intended Audience :: Science/Research",
         "License :: OSI Approved :: BSD 3-Clause License",

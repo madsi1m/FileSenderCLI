@@ -15,11 +15,19 @@ build:
     - PYTHONDONTWRITEBYTECODE="" {{ PYTHON }} -m pip install . -vvv
 
 requirements:
+  build:
+    - python
+    - pip
+    - setuptools >58.2.0
+    - wheel
   host:
     - python
     - pip
     - setuptools >58.2.0
     - wheel
+    - requests
+    - urllib3
+    - cryptography
   run:
     - python
     - requests
