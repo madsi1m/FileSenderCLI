@@ -12,22 +12,11 @@ build:
   noarch: python
   number: 0
   script:
-    - "mkdir -p $PREFIX/bin"
-    - "cp filesender.py $PREFIX/bin/filesender.py"
-    - "chmod 777 $PREFIX/bin/filesender.py"
+    - "{{ PYTHON }} -m pip install . -vv"
 
 requirements:
-  build:
-    - pip
-    - python
   host:
-    - pip
     - python
-  run:
-    - python
-    - conda-forge::requests
-    - conda-forge::urllib3
-    - conda-forge::cryptography
 
 about:
   home: https://www.aarnet.edu.au/filesender
