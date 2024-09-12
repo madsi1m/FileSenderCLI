@@ -1,5 +1,5 @@
 {% set name = "FileSenderCLI" %}
-{% set version = "3.0" %}
+{% set version = "3.0.0" %}
 
 package:
   name: "{{ name|lower }}"
@@ -16,6 +16,11 @@ build:
 
 requirements:
   host:
+    - python
+    - pip
+    - setuptools
+    - wheel
+  run:
     - python
 
 about:
